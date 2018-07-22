@@ -8,7 +8,13 @@
 /envvars
 /logs/
 /mods-available/
-/conf-available/
 /.idea/jsLibraryMappings.xml
 /.idea/dictionaries/mao.xml
 /.idea/inspectionProfiles/Project_Default.xml
+/conf-available/localized-error-pages.conf
+/conf-available/javascript-common.conf
+/conf-available/other-vhosts-access-log.conf
+/conf-available/apache2-doc.conf
+/conf-available/charset.conf
+/conf-available/security.conf
+/conf-available/serve-cgi-bin.conf

@@ -1,0 +1,30 @@
+{
+  "name": "apacheconfig",
+  "version": "0.1.0",
+  "description": "Configuration for Apache 2.4",
+  "main": "index.js",
+  "scripts": {
+    "gulp": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/turboBasic/ApacheConfig.git"
+  },
+  "keywords": [
+    "Apache"
+  ],
+  "author": "turboBasic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/turboBasic/ApacheConfig/issues"
+  },
+  "homepage": "https://github.com/turboBasic/ApacheConfig#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "gulp": "^4.0.0",
+    "gulp-ssh": "^0.7.0"
+  },
+  "dependencies": {}
+}

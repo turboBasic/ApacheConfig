@@ -1,26 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData">
+  <component name="PublishConfigData" serverName="d8">
     <serverData>
-      <paths name="Laragon">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
       <paths name="d8">
         <serverdata>
           <mappings>
-            <mapping deploy="/etc/apache2" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/etc/apache2" local="$PROJECT_DIR$" web="" />
           </mappings>
-          <excludedPaths>
-            <excludedPath local="true" path="$PROJECT_DIR$/conf-enabled" />
-            <excludedPath local="true" path="$PROJECT_DIR$/include" />
-            <excludedPath local="true" path="$PROJECT_DIR$/mods-enabled" />
-            <excludedPath local="true" path="$PROJECT_DIR$/apache2.conf.original" />
-            <excludedPath local="true" path="$PROJECT_DIR$/envvars" />
-          </excludedPaths>
         </serverdata>
       </paths>
     </serverData>

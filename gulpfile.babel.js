@@ -3,7 +3,11 @@ import GulpSSH from 'gulp-ssh'
 
 
 const apache = {
-    src: './apache2.conf',
+    src: [
+        './apache2.conf' ,
+        './sites-available/*'
+    ],
+    base: '.',
     dest: '/etc/apache2'
 }
 
@@ -11,7 +15,7 @@ const config = {
     host: 'd8',
     port: 22,
     username: 'root',
-    //privateKey: '~/.ssh/bb88_id_rsa',
+    //privateKey: '~/.ssh/id_rsa',
     agent: process.env["SSH_AUTH_SOCK"]
 }
 
@@ -21,7 +25,7 @@ const gulpSSH = new GulpSSH ({
 })
 
 export const copyApache = () =>
-    gulp.src(apache.src)
+    gulp.src(apache.src, {base: apache.base})
     .pipe(
         gulpSSH.dest(apache.dest)
     )

@@ -11,6 +11,11 @@ const apache = {
     dest: '/etc/apache2'
 }
 
+const apacheDocroot = {
+    src: './html/**/*',
+    dest: '/var/www/html'
+}
+
 const config = {
     host: 'd8',
     port: 22,
@@ -24,11 +29,19 @@ const gulpSSH = new GulpSSH ({
     sshConfig: config
 })
 
-export const copyApache = () =>
-    gulp.src(apache.src, {base: apache.base})
+const copyApacheConfig = () =>
+    gulp.src(apache.src, {base: apache.base,  dot: true})
     .pipe(
         gulpSSH.dest(apache.dest)
     )
+
+const copyApacheDocroot = () =>
+    gulp.src(apacheDocroot.src, {dot: true})
+    .pipe(
+        gulpSSH.dest(apacheDocroot.dest)
+    )
+
+export const copyApache = gulp.parallel(copyApacheConfig, copyApacheDocroot)
 
 export const restartApache = () =>
     gulpSSH.exec(

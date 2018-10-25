@@ -48,4 +48,5 @@ export LANG
 
 export WWW_BASE=/var/www
 export HOSTNAME=d8
+export DOMAIN=d
 

@@ -3,12 +3,12 @@
 APACHE=/etc/apache2
 WWW_BASE=${WWW_BASE:-"/var/www"}
 
-declare -a files=(
-    "apache2.conf"
-    "ports.conf"
-    "sites-available/*"
-    "envvars"
-)
+#declare -a files=(
+#    "apache2.conf"
+#    "ports.conf"
+#    "sites-available/*"
+#    "envvars"
+#)
 
 #for i in ${files[@]}
 #do
@@ -22,7 +22,21 @@ declare -a files=(
 #sudo cp --verbose html/magento      ${WWW_BASE}/
 
 
-sudo rsync --recursive --perms --verbose ./etc_apache2/ /etc/apache2/
+sudo rsync --recursive --backup --verbose ./etc_apache2/ /etc/apache2/
 
+
+sudo a2disconf apache2-doc javascript-common localized-error-pages serve-cgi-bin security other-vhosts-access-log phpmyadmin
+
+sudo a2enconf info logs
+sudo a2enmod info status
+sudo a2ensite 000-default 002-magento
+sudo a2dissite 001-php
+
+sudo a2dismod ssl
+sudo a2dissite default-ssl
+
+echo "Restarting Apache..."
 sudo systemctl restart apache2
+
+#sudo apache2ctl fullstatus
 

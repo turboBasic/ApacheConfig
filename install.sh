@@ -22,7 +22,7 @@ WWW_BASE=${WWW_BASE:-"/var/www"}
 #sudo cp --verbose html/magento      ${WWW_BASE}/
 
 
-sudo rsync --recursive --backup --verbose ./etc_apache2/ /etc/apache2/
+sudo rsync --recursive --backup --perms --verbose ./etc_apache2/ $APACHE
 
 
 sudo a2disconf apache2-doc javascript-common localized-error-pages serve-cgi-bin security other-vhosts-access-log phpmyadmin
